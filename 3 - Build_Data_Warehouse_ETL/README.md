@@ -34,6 +34,34 @@ Prepared database schema design and ETL pipeline.
 - time - timestamps of records in songplays broken down into specific units - 
 *start_time, hour, day, week, month, year, weekday*
 
+###  Infrastructure provisioning
+
+There are `create_redshift_cluster.ipynb` that will ease our job to create our data warehouse infrastructure:
+##### 1. Creating a IAM ROLE
+##### 2. Creating a Redshift Cluster
+##### 2.1 Checking the cluster availability 
+##### 2.2 Take note of the cluster
+##### 3. Open an incoming TCP port to access the cluster ednpoint
+##### 4. Make sure you can connect to the clusterConnect to the cluster
+##### 5.  Clean up your resources
+
+_After the ETL process done, don't forgot to run command_
+
+## The ETL Process
+
+It consists of these two simple python scripts:
+
+ - `python create_tables.py` - It will drop the tables if exists, and then create it (again);
+ - `python etl.py` - This script does two principal tasks:
+     - Copy (load) the logs from the dataset's S3 bucket to the staging tables;
+     - Translate all data from the staging tables to the analytical tables with `INSERT ... SELECT` statements.
+
+## Analyzing the results
+
+After the ETL process completion we can check if we did it right by running the `python analytics.py`.
+
+It is a simple script to return the counting of each analytical table.
+
 ## Required Steps to run the project 
 
 1) Configuration setup - Fill the dwh.cfg with the necessary information to start a redshift cluster
