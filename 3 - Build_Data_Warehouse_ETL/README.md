@@ -34,7 +34,7 @@ Prepared database schema design and ETL pipeline.
 - time - timestamps of records in songplays broken down into specific units - 
 *start_time, hour, day, week, month, year, weekday*
 
-###  Infrastructure provisioning
+##  Infrastructure provisioning
 
 There are `create_redshift_cluster.ipynb` that will ease our job to create our data warehouse infrastructure:
 ##### 1. Creating a IAM ROLE
@@ -45,7 +45,7 @@ There are `create_redshift_cluster.ipynb` that will ease our job to create our d
 ##### 4. Make sure you can connect to the clusterConnect to the cluster
 ##### 5.  Clean up your resources
 
-_After the ETL process done, don't forgot to run command_
+_After the ETL process done, don't forgot to run last command_
 
 ## The ETL Process
 
