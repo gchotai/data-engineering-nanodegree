@@ -131,8 +131,8 @@ class SaveToJson:
                 csvwriter.writerow(row)
 
     def load_aws_cred(self):
-        os.environ["AWS_ACCESS_KEY_ID"] = "AKIARYY7NW3W7LEH6THI"
-        os.environ["AWS_SECRET_ACCESS_KEY"] = "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"
+        os.environ["AWS_ACCESS_KEY_ID"] = "key_id"
+        os.environ["AWS_SECRET_ACCESS_KEY"] = "key"
         os.system("load_aws_cred............")
         
         
